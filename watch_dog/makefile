@@ -22,6 +22,10 @@ clean:
 	rm *.out
 	rm *.ar
 
+.PHONY: wd
+wd:
+	make -C wd_app
+
 .PHONY: run
 run:
 	./$(TARGET)
