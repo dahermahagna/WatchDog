@@ -21,10 +21,10 @@ union semun
 key_t KeyCreate(int int_key)
 {
     key_t key = 0;
-    key = ftok("/home/daher/git/projects/watch_dog/include/sem_manipulation", int_key);
+    key = ftok("/home/student/daher/proj/watch_dog/include/sem_manipulation.txt", int_key);
     if (-1 == key)
     {
-        puts("ftok");
+        puts("ftok error, can't creat new key for semaphore");
         exit(1);
     }
     return key;

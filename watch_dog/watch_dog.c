@@ -49,7 +49,7 @@ void StartWatchdog(char *argv[])
     pthread_t WD_thread = 0;
 
     SetUp();
-    while(0 != pthread_create(&WD_thread,NULL,&WatchDogThread,(void*)argv)); // try to creat thread until success
+    while(0 != pthread_create(&WD_thread,NULL,&WatchDogThread,(void*)argv)); /* try to creat thread until success */
 }
 /*--------------------------------------------------------*/
 
