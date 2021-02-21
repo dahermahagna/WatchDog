@@ -1,14 +1,14 @@
 #define _GNU_SOURCE
 
-#include <pthread.h>        /* pthread create       */
-#include <unistd.h>         /*getpid, getpid ,sleep */
-#include <sys/types.h>      /*pid_t                 */
-#include <stdlib.h>         /* getenv , setenv      */
-#include <stdatomic.h>      /* atomic variables     */
-#include <signal.h>         /*signals               */
-#include <stdio.h>          /*printf                */
-#include <sys/wait.h>       /*wait                  */
-#include <string.h>         /*memset                */
+#include <pthread.h>        /* pthread create        */
+#include <unistd.h>         /* getpid, getpid ,sleep */
+#include <sys/types.h>      /* pid_t                 */
+#include <stdlib.h>         /* getenv , setenv       */
+#include <stdatomic.h>      /* atomic variables      */
+#include <signal.h>         /* signals               */
+#include <stdio.h>          /* printf                */
+#include <sys/wait.h>       /* wait                  */
+#include <string.h>         /* memset                */
 
 #include "watch_dog.h"
 #include "include/scheduler.h"
