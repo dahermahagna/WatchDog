@@ -10,9 +10,9 @@
 #include <sys/wait.h>  /*wait                  */
 #include <time.h>
 
-#include "../include/scheduler.h"
-#include "../include/uid.h"
-#include "../include/ssemaphore.h"
+#include "scheduler.h"
+#include "uid.h"
+#include "ssemaphore.h"
 
 /*------------------------MACRO---------------------------*/
 
