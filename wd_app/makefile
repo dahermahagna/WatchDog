@@ -18,8 +18,7 @@ $(TARGET): $(OBJ)
 
 .PHONY: clean
 clean:
-	rm *.out
-	rm *.ar
+	rm *.o
 
 .PHONY: run
 run:

@@ -17,6 +17,7 @@ $(TARGET): $(OBJ)
 clean:
 	rm *.out
 	rm src/*.o
+	rm wd_app/*.o
 
 .PHONY: wd
 wd:
