@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	for(i = 0; 60 > i; ++i)
 	{
 		sleep(1);
-		printf("Test the watchdog: %d\n",i);
+		printf("Test the watchdog %d\n",i);
 	}
 
 	StopWatchdog();
