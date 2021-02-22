@@ -3,7 +3,7 @@
 WatchDog is a software program that revive the user process when crashes in critical section.
 
 # usage 
-- copy the include directory in the directory of the program that has the critical code to be protected.
+- copy the include and src directories in the directory of the program that has the critical code to be protected.
 - include the "include/watch_dog.h" library in the program. 
 - limit the critical section by:
      - StartWatchdog(argv);
