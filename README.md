@@ -18,4 +18,4 @@ WatchDog is a software program that relive the user process when crashes in crit
    - priority queue
    - sorted list
    - doubly list
-* they are included in the include directory to show them. but in order of encapsulation i could replace it in static/shared library
+- they are included in the include directory to show them. but in order of encapsulation i could replace it in static/shared library
