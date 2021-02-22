@@ -25,7 +25,11 @@ clean:
 
 .PHONY: wd
 wd:
+<<<<<<< HEAD
 	make -C include/wd_app
+=======
+	make -C wd_app
+>>>>>>> 713a8b299b3ab0b60b73cc66c01e39eaaabd3f97
 
 .PHONY: run
 run:
