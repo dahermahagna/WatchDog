@@ -17,6 +17,8 @@
 /*------------------------MACRO---------------------------*/
 
 #define SIGNAL_MAX_REPEAT (2)
+#define POST_SEM (1)
+#define WAIT_SEM (-1)
 
 /*---------------FUNCTION DECLERATION---------------------*/
 static void SetUp(void);
@@ -48,9 +50,9 @@ int main(int argc, char *argv[])
 
     SchedulerAdd(wd_sch, CheckCounterTask, (void *)argv, SIGNAL_MAX_REPEAT);
 
-    IncDecSem(sem_id2, 1, 0);
+    IncDecSem(sem_id2, POST_SEM, 0); /* post for second semaphore to synchronize start working*/ 
 
-    IncDecSem(sem_id1, -1, 0);
+    IncDecSem(sem_id1, WAIT_SEM, 0); /* wait for first semaphore to synchronize start working */
 
     SchedulerRun(wd_sch);
 
@@ -72,7 +74,7 @@ static void SetUp(void)
     stop_program.sa_handler = Sigusr2Handler;
     sigaction(SIGUSR2, &stop_program, NULL);
 
-    sem_id1 = SemIdCreate(KeyCreate(1), 0);
+    sem_id1 = SemIdCreate(KeyCreate(1), 0); 
     sem_id2 = SemIdCreate(KeyCreate(2), 0);
 
     wd_sch = SchedulerCreate();

@@ -18,6 +18,8 @@
 /*------------------------MACRO---------------------------*/
 
 #define SIGNAL_MAX_REPEAT (2)
+#define POST_SEM (1)
+#define WAIT_SEM (-1)
 
 /*---------------FUNCTION DECLERATION---------------------*/
 
@@ -49,7 +51,7 @@ void StartWatchdog(char *argv[])
     pthread_t WD_thread = 0;
 
     SetUp();
-    while(0 != pthread_create(&WD_thread,NULL,&WatchDogThread,(void*)argv)); /* try to creat thread until success*/
+    while(0 != pthread_create(&WD_thread,NULL,&WatchDogThread,(void*)argv)); /* try to create thread until success*/
 
 }
 /*--------------------------------------------------------*/
@@ -59,8 +61,8 @@ void StopWatchdog()
     end_flag = 1;
     kill(wd_pid_g,SIGUSR2);
     
-    IncDecSem(sem_id1,-1,0);
-    IncDecSem(sem_id2,-1,0);
+    IncDecSem(sem_id1,WAIT_SEM,0); /* wait until the release all resources */ 
+    IncDecSem(sem_id2,WAIT_SEM,0); /* wait until the release all resources */
     CleanUp();
 }
 /*----------     STATIC FUNCTION DEFINITION     ----------*/
@@ -85,8 +87,8 @@ static void *WatchDogThread(void *argv)
     SchedulerAdd(thread_sch, SendSigusr1Task,NULL, 1);
     SchedulerAdd(thread_sch, CheckCounterTask, (void*)argv, SIGNAL_MAX_REPEAT);
 
-    IncDecSem(sem_id1, 1, 0);
-    IncDecSem(sem_id2, -1, 0);
+    IncDecSem(sem_id1, POST_SEM, 0); /* post for first semaphore to synchronize start working */ 
+    IncDecSem(sem_id2, WAIT_SEM, 0); /* wait for second semaphore to synchronize start working */
 
     SchedulerRun(thread_sch);
     SchedulerDestroy(thread_sch);

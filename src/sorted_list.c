@@ -184,8 +184,6 @@ sorted_list_iter_t SortedListNext(sorted_list_iter_t iter)
 
 	next_iter = UpdateInternalIter(next_iter,DlistNext(GetInternalIterFromIter(iter)));
 
-	/*next_iter.internal_itr = DlistNext(next_iter.internal_itr);*/
-
 	return next_iter;
 }
 
