@@ -27,3 +27,6 @@ WatchDog is a software program that revive the user process when crashes in crit
    3. run the watch_dog_test (make run)
    4. in another terminal run 'ps -a' command to show the processes that are running now.
    5. kill the WD process or the test process (kill PID no. command), see that the process will be revived
+
+# requirements for the project
+- use signals as ipcs.
