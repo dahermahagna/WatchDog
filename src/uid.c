@@ -1,10 +1,9 @@
-#include <assert.h> /*assert*/
-#include <stdlib.h> /*malloc*/
-#include <unistd.h> /* getpid */
-#include <stdatomic.h> /* atomic */
-#include <pthread.h> /* pthread */
+#include <assert.h> 	/*assert*/
+#include <stdlib.h> 	/*malloc*/
+#include <unistd.h> 	/* getpid */
+#include <stdatomic.h> 	/* atomic */
+#include <pthread.h> 	/* pthread */
 
-/*reviewed by Or*/
 
 #include "uid.h"
 
