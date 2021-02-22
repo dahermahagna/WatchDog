@@ -3,8 +3,5 @@
 !*.c
 !*.h
 !makefile
-!Makefile
-!*.cpp
-!*.hpp
 !*.txt
 !.gitignore
