@@ -14,14 +14,13 @@ AR=ar
 $(TARGET): $(OBJ)
 	$(CC)  -o $@ $^ -lpthread
 
-	ar r $(ARCHIVE) $(OBJ)
 	rm *.o
 	rm include/*.o
 
 .PHONY: clean
 clean:
 	rm *.out
-	rm *.ar
+	rm include/*.ar
 
 .PHONY: wd
 wd:
