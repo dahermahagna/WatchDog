@@ -1,9 +1,9 @@
 CC=gcc
 CFLAGS=-ansi -pedantic-errors -Wall -Wextra -g -I.
-DEPS = watch_dog.h ../include/scheduler.h
-TARGET = ../watch_dog_app.out
+DEPS = watch_dog.h ../scheduler.h
+TARGET = ../../watch_dog_app.out
 ARCHIVE = lib.ar
-OBJ =  watch_dog_app.o ../include/ssemaphore.o ../include/scheduler.o ../include/uid.o ../include/pqueue.o ../include/task.o ../include/sorted_list.o ../include/dlist.o
+OBJ =  watch_dog_app.o ../ssemaphore.o ../scheduler.o ../uid.o ../pqueue.o ../task.o ../sorted_list.o ../dlist.o
 AR=ar
 
 %%.o: %%.c $(DEPS)
@@ -15,7 +15,7 @@ $(TARGET): $(OBJ)
 
 	ar r $(ARCHIVE) $(OBJ)
 	rm *.o
-	rm ../include/*.o
+	rm ../*.o
 
 .PHONY: clean
 clean:

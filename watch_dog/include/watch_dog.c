@@ -11,9 +11,9 @@
 #include <string.h>         /*memset                */
 
 #include "watch_dog.h"
-#include "include/scheduler.h"
-#include "include/uid.h"
-#include "include/ssemaphore.h"
+#include "scheduler.h"
+#include "uid.h"
+#include "ssemaphore.h"
 
 /*------------------------MACRO---------------------------*/
 
@@ -49,7 +49,7 @@ void StartWatchdog(char *argv[])
     pthread_t WD_thread = 0;
 
     SetUp();
-    while(0 != pthread_create(&WD_thread,NULL,&WatchDogThread,(void*)argv)); // try to creat thread until success
+    while(0 != pthread_create(&WD_thread,NULL,&WatchDogThread,(void*)argv)); /* try to creat thread until success*/
 }
 /*--------------------------------------------------------*/
 
@@ -151,7 +151,6 @@ static int SendSigusr1Task(void *data)
 }
 static int CheckCounterTask(void *argv)
 {
-    pid_t wd_pid = 0;
     if (1 == end_flag)
     {
         SchedulerPause(thread_sch);
