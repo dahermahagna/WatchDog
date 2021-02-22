@@ -1,9 +1,5 @@
-/* #include <fcntl.h> */
-/* #include <sys/stat.h> */
-/* #include <semaphore.h> */
-/* #include <sys/ipc.h> */
-/* #include <sys/types.h> */
-#include <sys/sem.h>
+
+#include <sys/sem.h> 
 #include <errno.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -14,8 +10,7 @@ union semun
     int val;               /* Value for SETVAL */
     struct semid_ds *buf;  /* Buffer for IPC_STAT, IPC_SET */
     unsigned short *array; /* Array for GETALL, SETALL */
-    struct seminfo *__buf; /* Buffer for IPC_INFO
-                                           (Linux-specific) */
+    struct seminfo *__buf; /* Buffer for IPC_INFO (Linux-specific) */
 };
 
 key_t KeyCreate(int int_key)
@@ -24,7 +19,7 @@ key_t KeyCreate(int int_key)
     key = ftok("src/sem_manipulation.txt", int_key);
     if (-1 == key)
     {
-        puts("ftok error, can't creat new key for semaphore");
+        perror("ftok error, can't creat new key for semaphore");
         exit(1);
     }
     return key;

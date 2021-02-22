@@ -6,7 +6,7 @@
 #include <stdlib.h>         /* getenv , setenv      */
 #include <stdatomic.h>      /* atomic variables     */
 #include <signal.h>         /*signals               */
-#include <stdio.h>          /*printf                */
+#include <stdio.h>          /*perror                */
 #include <sys/wait.h>       /*wait                  */
 #include <string.h>         /*memset                */
 
@@ -122,7 +122,7 @@ static void CreateWDProcess(void *argv)
     wd_pid = fork();
     if (0 > wd_pid)
     {
-        printf("Can't create WD_app process\n");
+        perror("Can't create WD_app process\n");
     }
     else if (0 == wd_pid)
     {
