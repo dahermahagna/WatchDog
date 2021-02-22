@@ -1,6 +1,6 @@
 /* #include "../utils/test.h" */
 #include <unistd.h>
-#include "include/watch_dog.h"
+#include "watch_dog.h"
 #include <stdio.h>
 
 /*-------------------------MAIN---------------------------*/

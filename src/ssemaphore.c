@@ -21,7 +21,7 @@ union semun
 key_t KeyCreate(int int_key)
 {
     key_t key = 0;
-    key = ftok("include/sem_manipulation.txt", int_key);
+    key = ftok("src/sem_manipulation.txt", int_key);
     if (-1 == key)
     {
         puts("ftok error, can't creat new key for semaphore");
