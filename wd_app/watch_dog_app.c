@@ -104,7 +104,7 @@ static int CheckCounterTask(void *data)
         wd_pid = fork();
         if (wd_pid < 0)
         {
-            printf("Can't create WD_app process\n");
+            perror("Can't create WD_app process\n");
         }
         else if (0 == wd_pid)
         {
