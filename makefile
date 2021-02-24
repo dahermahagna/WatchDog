@@ -4,7 +4,7 @@ CFLAGS=-ansi -pedantic-errors -Wall -Wextra -g $(INC_DIR_PATH)
 DEPS = watch_dog.h include/scheduler.h
 TARGET = watch_dog.out
 ARCHIVE = lib.ar
-SHARED = bin/libwd.so
+SHARED = bin/libwd.so 
 OBJ = test/watch_dog_test.o src/watch_dog.o src/ssemaphore.o src/scheduler.o src/uid.o src/pqueue.o src/task.o src/sorted_list.o src/dlist.o
 
 
